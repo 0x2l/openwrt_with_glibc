@@ -47,8 +47,6 @@ jobs:
 
     - name: Free disk space
       run: |
-        sudo rm -rf /etc/apt/sources.list.d
-        sudo bash -c "curl -s ${{ secrets.ubuntu_apt }} > /etc/apt/sources.list"
         sudo swapoff -a
         sudo rm -f /swapfile /mnt/swapfile
         sudo docker image prune -a -f
